@@ -50,7 +50,7 @@
     <div class="space05"></div>
     <div class="space05"></div>
     <div class="container">
-        <div class="row">
+        <div id="fles" class="row">
             <div class="col col-lg-6">
                 <h2 class="big">自我介紹</h2>
                 <h5 class="small">      我是溶，喜愛電繪創作與設計，我對於設計相關的工作充滿熱情，
@@ -67,20 +67,22 @@
 </div>
 
 
-<div id="work">
+
+<div id="work"> 
     <div class="space05"></div>
     <div class="space05"></div>
     <div class="container">
         <h2 class="big">作品展示</h2>
         <div class="row">
-            <div class="col col-lg-6">
-            <div id="two"><img src="image/Mayoi.jpg" alt=""></div>
+            <div class="col col-lg-6" v-for="item in badvue" >
+            <div id="two" >
+                <img :src="item.imgUrl">
             </div>
-            <div class="col col-lg-6">
-                <div id="two"><img src="image/Mayoi.jpg" alt=""></div>
-                </div>
+            </div>
+            
         </div>
 </div>
+
 
 <div class="space05"></div>
 <div id="contact">
@@ -92,7 +94,7 @@
     
     
     
-    
+<script src="knk.js"></script>   
     
     
 </body>
