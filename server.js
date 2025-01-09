@@ -11,7 +11,7 @@ profolio.insert([
     
 ])
 
-server.get("/portfolio-data", (req,res)=>{
+server.get("/yee", (req,res)=>{
     //DB
     profolio.find({}).then(results=>{
       if(results != null){

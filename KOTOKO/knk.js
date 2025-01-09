@@ -8,7 +8,7 @@ createApp({
     },
 
     mounted() {
-        fetch("/portfolio-data")
+        fetch("/yee")
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -23,7 +23,7 @@ createApp({
                 console.error("加載數據失敗:", error);
             });
     }
-}).mount('.portfolio-data');
+}).mount('.yee');
 
 
 
