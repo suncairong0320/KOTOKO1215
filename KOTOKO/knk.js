@@ -2,19 +2,28 @@ const {createApp,ref} = Vue;
 
 createApp({
     data() {
-        return{
-            badvue:[
-                {imgUrl:'image/Mayoi.jpg',igh:"圖片",},
-                {imgUrl:'image/ktk.jpg',igh:"圖片"},
-                {imgUrl:'image/Mayoi2.jpg',igh:"圖片"},
-                {imgUrl:'image/hallo.jpg',igh:"圖片"},
-                {imgUrl:'image/kanako.jpg',igh:"圖片"},
-                {imgUrl:'image/magic.jpg',igh:"圖片"},
+        return {
+            badvue: []
+        };
+    },
 
-            ]
-        }
+    mounted() {
+        fetch("/portfolio-data")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log("Received data:", data); // 檢查返回資料
+                this.badvue = data; // 將資料分配給 badvue
+            })
+            .catch((error) => {
+                console.error("加載數據失敗:", error);
+            });
     }
-}).mount("#work")
+}).mount('.portfolio-data');
 
 
 
