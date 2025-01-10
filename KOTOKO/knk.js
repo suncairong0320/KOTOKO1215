@@ -23,7 +23,9 @@ createApp({
                 console.error("加載數據失敗:", error);
             });
     }
-}).mount('.yee');
+}).mount('.yee'); 
+
+//把Vue原本儲存的資料透過server上繳給資料庫儲存起來。server被執行的同時會從資料庫把資料拿取，再以它原本設定好的路徑傳到Vue跟html。
 
 
 
